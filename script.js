@@ -1,5 +1,7 @@
 function sayHello () {
-    alert("Hello world!");
+    setTimeout(function () {
+        alert("Hello world!");
+    }, 5000);
 }
 
 sayHello();
