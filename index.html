@@ -4,22 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <g>
-        <svg width="200px" height="60px" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect x="50" y="50" width="500" height="100" rx="20" ry="20"
-                style="fill:none;stroke:#4CAF50;stroke-width:10;" />
-            <text x="300" y="125" font-size="100" font-family="Arial, sans-serif" fill="#4CAF50" text-anchor="middle"
-                dominant-baseline="middle">✓</text>
-            <text x="300" y="190" font-size="40" font-family="Arial, sans-serif" fill="#333333" text-anchor="middle"
-                dominant-baseline="middle">To-Do List</text>
-        </svg>
-    </g>
+    <div class="to-do-list-logo">
+        <g>
+            <svg width="200px" height="90px" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect x="50" y="50" width="500" height="100" rx="20" ry="20"
+                    style="fill:none;stroke:#4CAF50;stroke-width:10;" />
+                <text x="300" y="110" font-size="100" font-family="Arial, sans-serif" fill="#4CAF50" text-anchor="middle"
+                    dominant-baseline="middle">✓</text>
+                <text x="300" y="190" font-size="50" font-family="Arial, sans-serif" fill="#333333" text-anchor="middle"
+                    dominant-baseline="middle">To-Do List</text>
+            </svg>
+        </g>
+    </div>
+
+    <div class="task-input">
+        <input type="text" id="task-input-field" placeholder="Add a new task (Bases secure, villages secure etc...)">
+        <button id="add-task-button">Add</button>
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <div class="menu">
+        <button id="hide-completed-button">Hide Completed Tasks</button>
+        <button id="delete-completed-button">Delete Completed Tasks</button>
+        <button id="show-all-button">Show All Tasks</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
