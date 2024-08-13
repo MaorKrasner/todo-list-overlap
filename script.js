@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const taskInputField = document.getElementById('task-input-field');
-    const addTaskBtn = document.getElementById('add-task-button');
+    const addTaskButton = document.getElementById('add-task-button');
     const taskList = document.getElementById('task-list');
-    const hideCompletedBtn = document.getElementById('hide-completed-button');
-    const deleteCompletedBtn = document.getElementById('delete-completed-button');
-    const showAllBtn = document.getElementById('show-all-button');
+    const hideCompletedButton = document.getElementById('hide-completed-button');
+    const deleteCompletedButton = document.getElementById('delete-completed-button');
+    const showAllButton = document.getElementById('show-all-button');
 
-    addTaskBtn.addEventListener('click', function() {
+    const addTask = () => {
         const taskText = taskInputField.value.trim();
         if (taskText !== "") {
             const taskItem = document.createElement('li');
@@ -21,27 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
             taskList.appendChild(taskItem);
             taskInputField.value = "";
 
-            taskItem.querySelector('.complete-task-button').addEventListener('click', function() {
+            taskItem.querySelector('.complete-task-button').addEventListener('click', () => {
                 taskItem.classList.toggle('completed');
             });
 
-            taskItem.querySelector('.delete-task-button').addEventListener('click', function() {
+            taskItem.querySelector('.delete-task-button').addEventListener('click', () => {
                 taskItem.remove();
             });
         }
-    });
+    };
 
-    hideCompletedBtn.addEventListener('click', function() {
+    addTaskButton.addEventListener('click', addTask);
+
+    hideCompletedButton.addEventListener('click', () => {
         const completedTasks = document.querySelectorAll('.task-item.completed');
         completedTasks.forEach(task => task.style.display = 'none');
     });
 
-    deleteCompletedBtn.addEventListener('click', function() {
+    deleteCompletedButton.addEventListener('click', () => {
         const completedTasks = document.querySelectorAll('.task-item.completed');
         completedTasks.forEach(task => task.remove());
     });
 
-    showAllBtn.addEventListener('click', function() {
+    showAllButton.addEventListener('click', () => {
         const allTasks = document.querySelectorAll('.task-item');
         allTasks.forEach(task => task.style.display = 'flex');
     });
